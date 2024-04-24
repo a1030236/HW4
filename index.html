@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+	Highcharts.chart('container', {
+  chart: {
+    type: 'spline'
+  },
+  title: {
+    text: '月平均溫度(最高溫)'
+  },
+  subtitle: {
+    text: 'Source: WorldClimate.com'
+  },
+  xAxis: {
+    categories: ['一月', '二月', '三月', '四月', '五月', '六月',
+      '七月', '八月', '九月', '十月', '十一月', '十二月']
+  },
+  yAxis: {
+    title: {
+      text: '溫度'
+    },
+    labels: {
+      formatter: function () {
+        return this.value + '°';
+      }
+    }
+  },
+  tooltip: {
+    crosshairs: true,
+    shared: true
+  },
+  plotOptions: {
+    spline: {
+      marker: {
+        radius: 4,
+        lineColor: '#666666',
+        lineWidth: 1
+      }
+    }
+  },
+  series: [{
+    name: '首爾',
+    marker: {
+      symbol: 'square'
+    },
+    data: [{
+      y: 0.8,
+      marker: {
+        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+      }
+    }, 3.3, 9.5, 17.3, 22.9, 26.6, 28.5, {
+      y: 29.5,
+      marker: {
+        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+      }
+    }, 25.5, 19.7, 11.2, 3.7]
+  }, {
+    name: '巴黎',
+    marker: {
+      symbol: 'diamond'
+    },
+    data: [{
+      y: 6.9,
+      marker: {
+        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+      }
+    }, 8.2, 11.8, 14.7, 19.0, 21.8, 24.4, {
+      y: 24.6,
+      marker: {
+        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+      }
+    }, 20.8, 15.8, 10.4, 7.8]
+  }, {
+    name: '舊金山',
+    marker: {
+      symbol: 'circle'
+    },
+    data: [{
+      y: 13.8,
+      marker: {
+        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+      }
+    }, 15.7, 16.6, 17.3, 17.9, 19.1, 19.2, 20.1, {
+      y: 21.2,
+      marker: {
+        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+      }
+    }, 20.7, 17.3, 13.9]
+  }]
+});
+</script>
+ 
+  製作者: 陳永同
+
+</body>
+</html>
